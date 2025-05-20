@@ -23,7 +23,7 @@
 # 
 # * We access the current directory with os.getcwd()
 
-# In[12]:
+# In[ ]:
 
 
 import os
@@ -35,7 +35,7 @@ current_dir
 # * os.path.dirname() gets the parent directory
 # * os.chir() defines the new current directory
 
-# In[13]:
+# In[ ]:
 
 
 os.chdir(os.path.dirname(current_dir))
@@ -44,7 +44,7 @@ print("You set a new current directory")
 
 # Confirm the new current directory.
 
-# In[14]:
+# In[ ]:
 
 
 current_dir = os.getcwd()
