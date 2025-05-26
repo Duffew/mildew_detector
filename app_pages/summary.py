@@ -28,7 +28,7 @@ def show():
 
     st.subheader("📖 Further Reading")
     st.error("""
-             [📄 Mildew Detector Business Case](https://github.com/Duffew/mildew_detector/tree/main#ml-business-case-assessment)  
-             [🍒 Powdery Mildew in Sweet Cherries](https://www.bctfpg.ca/pest_guide/info/101/Powdery_Mildew_Sweet_Cherries#:~:text=Powdery%20mildew%20of%20cherry%20is%20caused%20by%20the%20fungus%20Podosphaera%20clandestina.&text=On%20leaves%2C%20powdery%20mildew%20appears,often%20puckered%20or%20distorted%20(Fig.))  
-             [🌱 Powdery Mildew Information](https://www.wmmga.org/content.aspx?page_id=22&club_id=101643&module_id=228931#:~:text=If%20you've%20had%20powdery,resistant%20varieties%20have%20been%20developed.)  
+    - 📄 [Mildew Detector Business Case](https://github.com/Duffew/mildew_detector/tree/main#ml-business-case-assessment)  
+    - 🍒 [Powdery Mildew in Sweet Cherries](https://www.bctfpg.ca/pest_guide/info/101/Powdery_Mildew_Sweet_Cherries#:~:text=Powdery%20mildew%20of%20cherry%20is%20caused%20by%20the%20fungus%20Podosphaera%20clandestina.&text=On%20leaves%2C%20powdery%20mildew%20appears,often%20puckered%20or%20distorted%20(Fig.))  
+    - 🌱 [Powdery Mildew Information](https://www.wmmga.org/content.aspx?page_id=22&club_id=101643&module_id=228931#:~:text=If%20you've%20had%20powdery,resistant%20varieties%20have%20been%20developed.)  
     """)

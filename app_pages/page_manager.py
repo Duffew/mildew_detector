@@ -1,6 +1,6 @@
 import streamlit as st
 # Import custom pages for structured navigation
-from app_pages import summary, hypothesis, study, predict, technical  
+from app_pages import home, summary, hypothesis, study, predict, technical  
 
 class PageManager:
     def __init__(self):
@@ -10,9 +10,10 @@ class PageManager:
         The emoji improves user engagement and visual clarity.
         """
         self.pages = {
+            "🏠 Home": home.show,
             "📜 Project Summary": summary.show,  # Overview of the project
-            "🔬 Hypothesis": hypothesis.show,    # Research-based assumptions
-            "📊 Visualization Study": study.show, # Exploratory data visuals
+            "💡 Hypothesis": hypothesis.show,    # Research-based assumptions
+            "🔬 Visualization Study": study.show, # Exploratory data visuals
             "🤖 Predict": predict.show,          # Model predictions page
             "⚙️ Technical": technical.show,      # Deep-dive into technical details
         }
