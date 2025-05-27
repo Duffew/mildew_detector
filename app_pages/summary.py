@@ -1,7 +1,27 @@
 import streamlit as st
 
 def show():
-    """Project Summary Page for Mildew Detection"""
+    """
+    Displays the project summary page for mildew detection in cherry trees.
+
+    This function presents the key information about the project, including:
+    - 🌳 **Project Background**: Explanation of powdery mildew affecting cherry trees.
+    - 🖼️ **Project Dataset**: Description of the dataset containing cherry leaf images.
+    - 💼 **Business Requirements**: Goals of the client, including image analysis and machine learning predictions.
+    - 📖 **Further Reading**: Additional resources for understanding powdery mildew and its impact.
+
+    Streamlit Components Used:
+    - `st.title()` → Displays the main heading.
+    - `st.subheader()` → Creates section headers for better organization.
+    - `st.info()` → Provides informational highlights about powdery mildew.
+    - `st.warning()` → Displays dataset details with an alert-style box.
+    - `st.success()` → Highlights key business requirements.
+    - `st.error()` → Provides additional reading resources in an emphasized format.
+
+    Returns:
+        None
+    """
+
     st.title("📜 Project Summary")
     
     st.subheader("🌳 Project Background")
