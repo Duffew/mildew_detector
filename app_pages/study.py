@@ -25,7 +25,7 @@ def image_montage(selection):
     """
     
     # Define input image paths
-    validation_path = Path(f"inputs/cherry-leaves/cherry-leaves/validation/{
+    validation_path = Path(f"inputs/cherry-leaves/cherry-leaves/test/{
         selection.lower().replace(' ', '_')}")
 
     if not validation_path.exists():
