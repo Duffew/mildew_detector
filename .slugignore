@@ -1,0 +1,5 @@
+*.ipynb
+.ipynb_checkpoints/
+
+inputs/cherry-leaves/cherry-leaves/train/
+inputs\cherry-leaves\cherry-leaves\validation
