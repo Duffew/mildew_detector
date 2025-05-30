@@ -32,7 +32,7 @@ def image_montage(selection):
         st.warning("⚠️ Directory not found. Please check your file paths.")
         return
 
-    image_paths = list(test_path.glob("*.jpg"))
+    image_paths = list(test_path.glob("*.*"))
 
     if not image_paths:
         st.warning(f"⚠️ No images found in '{selection}' directory.")
