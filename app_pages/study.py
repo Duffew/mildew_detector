@@ -25,14 +25,14 @@ def image_montage(selection):
     """
     
     # Define input image paths
-    validation_path = Path(f"inputs/cherry-leaves/cherry-leaves/test/{
+    test_path = Path(f"inputs/cherry-leaves/cherry-leaves/test/{
         selection.lower().replace(' ', '_')}")
 
-    if not validation_path.exists():
+    if not test_path.exists():
         st.warning("⚠️ Directory not found. Please check your file paths.")
         return
 
-    image_paths = list(validation_path.glob("*.jpg"))
+    image_paths = list(test_path.glob("*.jpg"))
 
     if not image_paths:
         st.warning(f"⚠️ No images found in '{selection}' directory.")
@@ -91,7 +91,7 @@ def show():
             - Average and variability images for healthy and mildewed leaves.
             - The difference between average healthy and mildewed images.
             - A randomized image montage of selected leaf categories.
-        - Uses Pathlib for structured file path management and validation.
+        - Uses Pathlib for structured file path management and test.
         - Ensures smooth image loading and warns users if images are missing.
         - Utilizes radio buttons for selecting image categories.
         - Passes user selections to `image_montage()` for dynamic image display.
