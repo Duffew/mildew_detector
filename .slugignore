@@ -1,5 +1,15 @@
 *.ipynb
 .ipynb_checkpoints/
 
-inputs\cherry-leaves\cherry-leaves\test
-inputs\cherry-leaves\cherry-leaves\validation
+# Exclude large datasets
+inputs/cherry-leaves/cherry-leaves/test/
+inputs/cherry-leaves/cherry-leaves/validation/
+
+# Exclude virtual environment (Heroku installs dependencies separately)
+.venv/
+
+# Ignore unnecessary build artifacts
+__pycache__/
+*.log
+*.csv  # Exclude raw data files if not needed
+*.json # Exclude configuration files if dynamically generated
