@@ -23,7 +23,7 @@ def predict(image):
     7. Returns the predicted label and confidence percentage.
 
     Args:
-        image (file-like object): The uploaded leaf image in JPG or PNG format.
+        image (file-like object): The uploaded leaf image
 
     Returns:
         tuple: (classification label, confidence score)
@@ -41,7 +41,7 @@ def predict(image):
     # Add batch size to image shape for tensorflow processing
     img_array = np.expand_dims(img_array, axis=0)
 
-    # Predict on uploaded images
+    # Predict on uploaded image
     prediction = model.predict(img_array)
     # Extract the raw probability from the nested array - remove brackets
     raw_value = prediction[0][0]
@@ -56,7 +56,8 @@ def predict(image):
     label = "Healthy" if probability < 0.5 else "Powdery Mildew"
 
     # Invert probability mapping for leaves labeled as 'Healthy'
-    # Example: 0.04 confidence becomes 0.96
+    # Example: 0.04 confidence of 'powdery mildew' 
+    # becomes 0.96 confidence of 'healthy'
     confidence = 1 - probability if label == "Healthy" else probability
 
     return label, confidence
@@ -65,3 +66,27 @@ def show():
     st.title("🤖 Predict Cherry Leaf Health")
     st.write("Upload cherry leaf images for AI-powered analysis.")
 
+    # Download Link for Cherry Leaf Images
+    st.markdown("[Download Cherry Leaf Images](https://www.kaggle.com/datasets/cameronconroy/cherry-leaves-test-data)")
+
+    # File Upload for Multiple Images
+    uploaded_files = st.file_uploader("Upload Cherry Leaf Images", type=["jpg", "png"], accept_multiple_files=True)
+
+    if uploaded_files:
+        results = []
+        for file in uploaded_files:
+            st.image(file, caption=file.name, width=200)
+            label, prob = predict(file)
+
+            # Show only the classification statement with confidence level
+            st.write(f"Classification: **{label} ({prob:.2%} confidence)**")
+
+            results.append({"Image Name": file.name, "Prediction": label, "Confidence Level": f"{prob:.2%}"})
+
+        # Convert results to DataFrame
+        df = pd.DataFrame(results)
+        st.dataframe(df)
+
+        # Download button for results
+        csv = df.to_csv(index=False).encode("utf-8")
+        st.download_button("Download Predictions", csv, "predictions.csv", "text/csv")
