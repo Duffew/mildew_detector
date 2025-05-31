@@ -10,11 +10,6 @@ def show():
     - ✅ **Validation**: Outlines the performance assessment approach, specifying that the 
       model must achieve at least **97% accuracy** to be considered a viable replacement.
 
-    Streamlit Components Used:
-    - `st.title()` → Section headings for hypothesis and validation.
-    - `st.info()` → Highlighting hypothesis details.
-    - `st.success()` → Emphasizing validation success criteria.
-
     Returns:
     - None
     

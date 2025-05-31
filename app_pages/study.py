@@ -101,10 +101,13 @@ def show():
         st.title("🔬 Visualization Study")
 
         # Instructions
-        st.info("""The client requires a study that displays the differences
-        between healthy cherry leaves and those infected with powdery mildew.
+        st.info(
+            "The client requires a study that displays the differences " \
+            "between healthy cherry leaves and those infected with " \
+            "powdery mildew. This page shows the results of that study."
+        )
 
-        Select from the checkboxes below to visualize the image data.""")
+        st.write("Select from the checkboxes below to visualize the image data.")
 
         # Define Paths Using Pathlib
         out_path = Path("outputs/v1")

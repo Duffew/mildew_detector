@@ -6,7 +6,8 @@ import numpy as np
 
 def predict(image):
     """
-    Processes uploaded images and predicts whether leaves are affected by powdery mildew.
+    Processes uploaded images and predicts whether leaves are affected by 
+    powdery mildew.
 
     Steps:
     1. Loads the trained mildew detection model.
@@ -19,7 +20,8 @@ def predict(image):
     5. Applies a classification threshold (0.5):
        - If probability < 0.5 → "Healthy" leaf.
        - If probability ≥ 0.5 → "Powdery Mildew."
-    6. Inverts the probability mapping for "Healthy" classifications to ensure correct confidence display.
+    6. Inverts the probability mapping for "Healthy" classifications 
+    to ensure correct confidence display.
     7. Returns the predicted label and confidence percentage.
 
     Args:
@@ -28,7 +30,8 @@ def predict(image):
     Returns:
         tuple: (classification label, confidence score)
                - Label: "Healthy" or "Powdery Mildew."
-               - Confidence: Adjusted probability ensuring meaningful confidence representation.
+               - Confidence: Adjusted probability ensuring meaningful 
+               confidence representation.
     """
     
     # Load the fitted model from the keras file
@@ -63,14 +66,35 @@ def predict(image):
     return label, confidence
 
 def show():
+    
     st.title("🤖 Predict Cherry Leaf Health")
-    st.write("Upload cherry leaf images for AI-powered analysis.")
+    st.info("""
+            Welcome to the inference page! Here you can:
+            
+            - Upload multiple cherry leaf images to the machine learning model, 
+            and it will make a prediction about the health of the leaves.
 
-    # Download Link for Cherry Leaf Images
-    st.markdown("[Download Cherry Leaf Images](https://www.kaggle.com/datasets/cameronconroy/cherry-leaves-test-data)")
+            - Download a summary of results as a .csv file.  
 
-    # File Upload for Multiple Images
-    uploaded_files = st.file_uploader("Upload Cherry Leaf Images", type=["jpg", "png"], accept_multiple_files=True)
+            - If you don't have any images of cherry leaves to hand, 
+            you can download some below.
+            """)
+    
+    # Download
+    st.header("📥 Download Images", divider=True)
+
+    # Download link for cherry leaf images
+    st.markdown("[Download Cherry Leaf Images](" \
+    "https://www.kaggle.com/datasets/cameronconroy/cherry-leaves-test-data)")
+    
+    
+    # Upload
+    st.header("📤 Upload Images", divider=True)
+
+    # File upload widget for multiple images
+    uploaded_files = st.file_uploader("Upload cherry leaf images for " \
+    "AI-powered analysis. You can upload multiple images.", 
+    type=["jpg", "png"], accept_multiple_files=True)
 
     if uploaded_files:
         results = []
@@ -81,12 +105,15 @@ def show():
             # Show only the classification statement with confidence level
             st.write(f"Classification: **{label} ({prob:.2%} confidence)**")
 
-            results.append({"Image Name": file.name, "Prediction": label, "Confidence Level": f"{prob:.2%}"})
+            results.append({"Image Name": file.name, "Prediction": label,
+                             "Confidence Level": f"{prob:.2%}"})
 
         # Convert results to DataFrame
+        st.header("📊 Results", divider=True)
         df = pd.DataFrame(results)
         st.dataframe(df)
 
         # Download button for results
         csv = df.to_csv(index=False).encode("utf-8")
-        st.download_button("Download Predictions", csv, "predictions.csv", "text/csv")
+        st.download_button("Download Predictions", csv, 
+                           "predictions.csv", "text/csv")
