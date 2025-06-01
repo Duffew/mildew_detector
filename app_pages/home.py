@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 def show():
     """
     Displays the main dashboard page for mildew detection.
@@ -7,20 +8,17 @@ def show():
     Functionality:
     - Title: Introduces the mildew detection dashboard.
     - Welcome Message: Provides a friendly introduction to the dashboard.
-    - Navigation Instructions: Guides users to use radio buttons for site navigation.
-    - Encourages Engagement: Makes the dashboard experience more interactive and enjoyable.
+    - Navigation Instructions: Guides users to use radio buttons for site nav.
+    - Encourages Engagement: Makes the dashboard experience more interactive.
 
     Returns:
     - None
     """
 
     st.title("🏠 Mildew Detection Dashboard")
-    st.markdown("""
-    Welcome to this Streamlit dashboard dedicated to analysing mildew in cherry leaves!  
-                
-    Use the radio buttons on the left-hand side of the browser to navigate the site.  
-                
-    Have fun!
-    """)
-    
+    st.markdown(
+        """Welcome to this Streamlit dashboard dedicated to mildew analysis!
+        Use the radio buttons on the left to navigate the site.
+        Have fun!"""
+    )
     
