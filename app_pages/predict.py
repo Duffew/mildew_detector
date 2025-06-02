@@ -76,7 +76,7 @@ def show():
     - upload images to be evaluated
     - download a set of results in a .csv file
     """
-    st.title("🤖 Predict Cherry Leaf Health")
+    st.title("Predict Cherry Leaf Health")
     st.info(
         "Welcome to the inference page! Here you can:\n\n"
         "- Upload multiple cherry leaf images to the machine learning model,\n"
