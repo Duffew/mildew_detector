@@ -17,8 +17,8 @@ def show():
         "training and performance."
     )
 
-    # Labels distribution
-    if st.checkbox("Labels Distribution"):  # Fixed typo
+    # Checkbox: Labels distribution
+    if st.checkbox("Labels Distribution"):
         st.header("Labels Distribution", divider=True)
         st.write(
             "The plot below shows the number of images used in train, "
@@ -40,7 +40,7 @@ def show():
         )
         st.write("---")
 
-    # Training accuracy and loss metrics
+    # Checkbox: Training accuracy and loss metrics
     if st.checkbox("Accuracy and Loss"):
         st.header("Accuracy and Loss", divider=True)
 
@@ -103,6 +103,7 @@ def show():
         )
         st.write("---")
 
+    # Checkbox: Model evaluation
     if st.checkbox("Model Evaluation"):
         st.header("Model Evaluation", divider=True)
 
