@@ -26,11 +26,20 @@ def show():
         "could then enable earlier and faster mildew detection."
     )
 
-    st.title("✅ Validation")
+    st.title("❓ Validation")
 
-    st.success(
+    st.warning(
         "The model’s accuracy in detecting powdery mildew will be evaluated "
         "using a labelled test dataset. If accuracy surpasses 97%, "
         "it will be considered a viable replacement for manual "
         "leaf inspection."
+    )
+
+    st.title("✅ Conclusion")
+
+    st.success(
+        "The technical page provides evidence to prove that the machine "
+        "learning model, developed by this project, exceeds the client's "
+        "requirement of 97% accuracy and is well-suited to replace "
+        "manual leaf inspection."
     )

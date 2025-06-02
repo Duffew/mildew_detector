@@ -135,4 +135,11 @@ def show():
             "The model exceeds the client's requirement of 97% "
             "accuracy and is well-suited for deployment."
         )
+
+        st.write(
+            "The client's hypothesis has proven valid and this model "
+            "can be confidently deployed to replace manual inspection of "
+            "cherry leaves."
+        )
+
         st.write("---")

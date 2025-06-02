@@ -115,6 +115,7 @@ def show():
             # Show raw probability output and classification with confidence
             st.write(f"{debug_output}")
             st.write(f"Classification: **{label} ({prob:.2%} confidence)**")
+            st.write("---")
 
             results.append(
                 {"Image Name": file.name, "Prediction": label,
