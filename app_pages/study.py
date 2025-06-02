@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import random
 from pathlib import Path
 
+
 def image_montage(selection):
     """
     Displays a random montage of cherry leaves categorized as 'healthy' or
@@ -29,13 +30,13 @@ def image_montage(selection):
         selection.lower().replace(' ', '_')}")
 
     if not test_path.exists():
-        st.warning("⚠️ Directory not found. Please check your file paths.")
+        st.warning("Directory not found. Please check your file paths.")
         return
 
     image_paths = list(test_path.glob("*.*"))
 
     if not image_paths:
-        st.warning(f"⚠️ No images found in '{selection}' directory.")
+        st.warning(f"No images found in '{selection}' directory.")
         return
 
     # Reset images when radio button selection changes
@@ -52,7 +53,7 @@ def image_montage(selection):
         st.subheader(f"Currently viewing {selection.lower()} leaves")
     # Column 2 has 1 unit width for Refresh button
     with col2:
-        if st.button("🔄 Refresh Montage"):
+        if st.button("Refresh Montage"):
             st.session_state["montage_images"] = random.sample(
                 image_paths, min(9, len(image_paths)))
 
@@ -63,6 +64,7 @@ def image_montage(selection):
     for idx, img in enumerate(selected_images):
         with cols[idx % 3]:
             st.image(str(img), use_container_width=True)
+
 
 def show():
     """
@@ -96,7 +98,7 @@ def show():
         """
 
         # Title
-        st.title("🔬 Visualization Study")
+        st.title("Visualization Study")
 
         # Instructions
         st.info(
@@ -118,8 +120,8 @@ def show():
         if st.checkbox(
                 "The difference between average and variability images"):
 
-            st.header('🔍 Variability Images Analysis', divider=True)
-            st.subheader('🌿 Healthy Leaves')
+            st.header('Variability Images Analysis', divider=True)
+            st.subheader('Healthy Leaves')
             st.write("""
 
             Healthy Leaves
@@ -154,7 +156,7 @@ def show():
 
             st.write("---")
 
-            st.subheader('🦠 Mildewed Leaves')
+            st.subheader('Mildewed Leaves')
             st.write("""
 
             Mildewed Leaves
@@ -195,7 +197,7 @@ def show():
         if st.checkbox(
                 "The difference between average healthy and mildewed leaves"):
 
-            st.header('🔍 Average Images Analysis', divider=True)
+            st.header('Average Images Analysis', divider=True)
             st.write("""
 
             - The average healthy leaf looks to have a relatively consistent
@@ -225,7 +227,7 @@ def show():
 
         # Checkbox: Image Montage
         if st.checkbox("Image montage"):
-            st.header("🔍 Image Montage", divider=True)
+            st.header("Image Montage", divider=True)
             st.write(
                 "Here you can see a montage of cherry leaves.\n"
                 "Choose your category and hit 'Refresh' to see more images.")
@@ -238,5 +240,3 @@ def show():
 
     # Call the visualization function
     data_visual_body()
-
-

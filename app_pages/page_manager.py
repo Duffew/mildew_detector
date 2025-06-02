@@ -21,12 +21,12 @@ class PageManager:
         """
 
         self.pages = {
-            "🏠 Home": home.show,  # Landing page for the dashboard
-            "📜 Project Summary": summary.show,  # Overview of the project
-            "💡 Hypothesis": hypothesis.show,    # Hypothesis and validation
-            "🔬 Visualization Study": study.show,  # Exploratory data visuals
-            "🤖 Predict": predict.show,          # Model predictions page
-            "⚙️ Technical": technical.show,      # Technical details
+            "Home": home.show,  # Landing page for the dashboard
+            "Project Summary": summary.show,  # Overview of the project
+            "Hypothesis": hypothesis.show,  # Hypothesis and validation
+            "Visualization Study": study.show,  # Exploratory data visuals
+            "Predict": predict.show,  # Model predictions page
+            "Technical": technical.show,  # Technical details
         }
 
     def run(self):
@@ -36,7 +36,7 @@ class PageManager:
         Ensures proper error handling for invalid selections.
         """
         # Sidebar title for easy navigation
-        st.sidebar.title("🔀 Navigation")
+        st.sidebar.title("Navigation")
 
         # Sidebar selection for choosing a page
         selected_page = st.sidebar.radio("Go to:", list(self.pages.keys()))

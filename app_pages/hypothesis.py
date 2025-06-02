@@ -4,19 +4,9 @@ import streamlit as st
 def show():
     """
     Displays the hypothesis and validation criteria for mildew detection.
-
-    Functionality:
-    - 💡 **Hypothesis**: Describes how a machine learning model can replace
-      manual inspection for detecting powdery mildew in cherry leaves.
-    - ✅ **Validation**: Outlines the performance assessment approach,
-      specifying that the model must achieve at least **97% accuracy** to be
-      considered a viable replacement.
-
-    Returns:
-    - None
     """
 
-    st.title("💡 Hypothesis")
+    st.title("Hypothesis")
 
     st.info(
         "Detection of powdery mildew in cherry leaves currently relies on "
@@ -26,7 +16,7 @@ def show():
         "could then enable earlier and faster mildew detection."
     )
 
-    st.title("❓ Validation")
+    st.title("Validation")
 
     st.warning(
         "The model’s accuracy in detecting powdery mildew will be evaluated "
@@ -35,7 +25,7 @@ def show():
         "leaf inspection."
     )
 
-    st.title("✅ Conclusion")
+    st.title("Conclusion")
 
     st.success(
         "The technical page provides evidence to prove that the machine "

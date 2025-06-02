@@ -87,7 +87,7 @@ def show():
     )
 
     # Download
-    st.header("📥 Download Images", divider=True)
+    st.header("Download Images", divider=True)
 
     # Download link for cherry leaf images
     st.markdown(
@@ -96,7 +96,7 @@ def show():
     )
 
     # Upload
-    st.header("📤 Upload Images", divider=True)
+    st.header("Upload Images", divider=True)
 
     # File upload widget for multiple images
     uploaded_files = st.file_uploader(
@@ -123,7 +123,7 @@ def show():
             )
 
         # Convert results to DataFrame
-        st.header("📊 Results", divider=True)
+        st.header("Results", divider=True)
         df = pd.DataFrame(results)
         st.dataframe(df)
 

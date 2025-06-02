@@ -11,7 +11,7 @@ def show():
     performance metrics, labels distribution, accuracy, loss, and evaluation
     results."""
 
-    st.title("⚙️ Technical Details")
+    st.title("Technical Details")
     st.info(
         "This page provides some technical details on the model "
         "training and performance."
